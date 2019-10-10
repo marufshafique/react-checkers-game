@@ -1,22 +1,117 @@
 .App {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Board {
+  border: 2px solid black;
+  width: calc(90px * 8);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.board-row {
+  margin: 0;
+  padding: 0;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-row .square {
+  display: flex;
+  width: 90px;
+  height:  90px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.square.black {
+  background: rgb(148, 147, 147);
+}
+
+.square.white {
+  background: rgb(240, 189, 180);
+}
+
+.square.player1 div {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(46, 46, 46);
+  justify-content: center;
+  align-items: center;
+}
+
+.square.player1 div div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+}
+
+.square.player2 div {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(243, 56, 56);
+  justify-content: center;
+  align-items: center;
+}
+
+.square.player2 div div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+}
+
+.square.player2,
+.square.player1 {
+  cursor: pointer;
+}
+
+.square.player2.king div div,
+.square.player1.king div div {
+  border: 10px solid #eee;
+}
+
+.square.isActive,
+.square.movable {
+  background-color:rgb(102, 102, 102) !important;
+}
+
+.winModal {
+  background: #eee;
+  padding: 20px;
+  width: 230px;
+  border-radius: 3px;
+  position: absolute;
+  top: calc(50% - 115px);
+  left: calc(50% - 115px);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.winModal h2 {
+  font-size: 30px;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.winModal button {
+  background: #37A000;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
